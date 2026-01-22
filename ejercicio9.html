@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>9) Contar hasta 0</title>
+    <style>
+        body{background:#f0fcf3;font-family:Arial;color:#00593c;text-align:center;}
+        pre{background:#d8f5e7;padding:10px;border-radius:5px;}
+        button{padding:10px 20px;background:#009688;color:white;border:none;border-radius:5px;}
+    </style>
+</head>
+<body>
+    <h1>Contar números hasta 0</h1>
+    <button onclick="contar()">Iniciar</button>
+    <pre id="out"></pre>
+
+    <script>
+      function contar(){
+        let count = 0, n;
+        do{
+          n = parseInt(prompt("Ingresa número (0 termina):"));
+          if(n !== 0) count++;
+        } while(n !== 0);
+        document.getElementById("out").innerText = "Cantidad: " + count;
+      }
+    </script>
+</body>
+</html>

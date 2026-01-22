@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>7) Negativos hasta -10</title>
+    <style>
+        body{background:#fcf0f0;font-family:Arial;color:#600000;text-align:center;}
+        pre{background:#f7d8d8;padding:10px;border-radius:5px;}
+        button{padding:10px 20px;background:#e53935;color:white;border:none;border-radius:5px;}
+    </style>
+</head>
+<body>
+    <h1>Números negativos hasta -10</h1>
+    <button onclick="negativos()">Mostrar</button>
+    <pre id="out"></pre>
+
+    <script>
+      function negativos(){
+        let i = -1, res = "";
+        while(i >= -10){
+          res += i + " ";
+          i--;
+        }
+        document.getElementById("out").innerText = res;
+      }
+    </script>
+</body>
+</html>

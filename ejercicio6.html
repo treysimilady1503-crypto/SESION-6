@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>6) Suma de 10 números</title>
+    <style>
+        body{background:#fff8e7;font-family:Arial;color:#6a4f00;text-align:center;}
+        pre{background:#f9f2d8;padding:10px;border-radius:5px;}
+        button{padding:10px 20px;background:#ff9800;color:white;border:none;border-radius:5px;}
+    </style>
+</head>
+<body>
+    <h1>Suma de 10 números</h1>
+    <button onclick="sumar10()">Iniciar</button>
+    <pre id="out"></pre>
+
+    <script>
+      function sumar10(){
+        let suma = 0, count = 0;
+        while(count < 10){
+          let n = parseInt(prompt("Número " + (count+1) + ":"));
+          if(isNaN(n)) break;
+          suma += n;
+          count++;
+        }
+        document.getElementById("out").innerText = "Suma: " + suma;
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>2) Pares hasta 40</title>
+    <style>
+        body{background:#fcf6ee;font-family:Arial;color:#5a4000;text-align:center;}
+        pre{background:#f7ecd0;padding:10px;border-radius:5px;}
+        button{padding:10px 20px;background:#cc7a00;color:white;border:none;border-radius:5px;}
+    </style>
+</head>
+<body>
+    <h1>Números pares hasta 40</h1>
+    <button onclick="pares()">Ejecutar</button>
+    <pre id="out"></pre>
+
+    <script>
+      function pares(){
+        let i = 2, res = "";
+        while(i <= 40){
+          res += i + " ";
+          i += 2;
+        }
+        document.getElementById("out").innerText = res;
+      }
+    </script>
+</body>
+</html>

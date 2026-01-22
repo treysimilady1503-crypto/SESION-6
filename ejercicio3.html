@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>3) Sumar hasta 100</title>
+    <style>
+        body {
+            background: #f7fcee;
+            font-family: Arial, sans-serif;
+            color: #3a6000;
+            text-align: center;
+            padding-top: 40px;
+        }
+        .cuadro {
+            background: #e8f9d8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px auto;
+            width: 260px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #3a6000;
+        }
+        button {
+            padding: 12px 26px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📌 Sumar números hasta llegar a 100</h1>
+    <button onclick="sumar()">Iniciar</button>
+
+    <div id="out"></div>
+
+    <script>
+      function sumar(){
+        let suma = 0;
+        let contador = 0;
+
+        while (suma < 100) {
+          let entrada = prompt("Ingresa un número (acumulas hasta ≥100):\nActual: " + suma);
+          if (entrada === null) {
+            alert("Proceso cancelado.");
+            break;
+          }
+
+          let n = parseFloat(entrada);
+
+          if (isNaN(n)) {
+            alert("⚠ Entrada no válida. Inténtalo de nuevo.");
+            continue;
+          }
+
+          suma += n;
+          contador++;
+        }
+
+        if (suma >= 100) {
+          document.getElementById("out").innerHTML =
+            `<div class="cuadro">
+                🎯 Total ingresado: ${suma}<br>
+                🧮 Números sumados: ${contador}
+            </div>`;
+        }
+      }
+    </script>
+
+</body>
+</html>

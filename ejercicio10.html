@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>10) Promedio de notas</title>
+    <style>
+        body {
+            background: #fdf7e9;
+            font-family: Arial;
+            color: #735c00;
+            text-align: center;
+        }
+        .cuadro {
+            background: #faf0d8;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px auto;
+            width: 280px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #735c00;
+        }
+        button {
+            padding: 10px 22px;
+            background: #ffc107;
+            color: black;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #e0a800;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📚 Promedio de Notas</h1>
+    <button onclick="promedio()">Iniciar</button>
+
+    <div id="out"></div>
+
+    <script>
+      function promedio(){
+        let cantidad = parseInt(prompt("¿Cuántas notas vas a ingresar?"));
+
+        if (isNaN(cantidad) || cantidad <= 0) {
+            alert("Por favor, ingresa un número válido de notas.");
+            return;
+        }
+
+        let suma = 0;
+        let count = 0;
+
+        while(count < cantidad){
+          let nota = parseFloat(prompt("Ingresa la nota " + (count+1) + ":"));
+          if (!isNaN(nota)) {
+            suma += nota;
+            count++;
+          } else {
+            alert("Valor no válido, intenta de nuevo.");
+          }
+        }
+
+        let prom = (suma / cantidad).toFixed(2);
+
+        document.getElementById("out").innerHTML =
+            `<div class="cuadro">Promedio: ${prom}</div>`;
+      }
+    </script>
+
+</body>
+</html>

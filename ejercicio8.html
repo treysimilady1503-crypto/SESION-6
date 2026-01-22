@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>8) Repetir mensaje personalizado</title>
+    <style>
+        body {
+            background: #f7f0fc;
+            font-family: Arial, sans-serif;
+            color: #4b0082;
+            text-align: center;
+        }
+        .cuadro {
+            background: #e3d8f5;
+            padding: 12px;
+            border-radius: 8px;
+            margin: 8px auto;
+            width: 300px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4b0082;
+        }
+        button {
+            padding: 10px 20px;
+            background: #8e24aa;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background: #7b1fa2;
+        }
+        input {
+            padding: 8px;
+            width: 220px;
+            font-size: 16px;
+            border: 2px solid #9c27b0;
+            border-radius: 5px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Repetir tu mensaje 5 veces</h1>
+
+    <!-- Entrada del mensaje -->
+    <input type="text" id="msg" placeholder="Escribe tu mensaje aquí">
+
+    <br>
+    <button onclick="repetir()">Ejecutar</button>
+
+    <div id="listado"></div>
+
+    <script>
+      function repetir() {
+        let mensaje = document.getElementById("msg").value;
+        let i = 1;
+        let cont = document.getElementById("listado");
+        cont.innerHTML = ""; // Limpiar antes de mostrar
+
+        if (mensaje.trim() === "") {
+            alert("Por favor, ingresa un mensaje.");
+            return;
+        }
+
+        while (i <= 5) {
+          let cuadro = document.createElement("div");
+          cuadro.className = "cuadro";
+          cuadro.innerText = mensaje + " (" + i + ")";
+          cont.appendChild(cuadro);
+          i++;
+        }
+      }
+    </script>
+
+</body>
+</html>

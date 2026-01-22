@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>📊 Tabla del 6 (hasta 12)</title>
+    <style>
+        body {
+            background: #fcf0f7;
+            font-family: Arial, sans-serif;
+            color: #5d0047;
+            text-align: center;
+        }
+        h1 {
+            margin-top: 30px;
+        }
+        button {
+            padding: 10px 25px;
+            background: #9c27b0;
+            color: white;
+            border: none;
+            border-radius: 7px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 15px 0;
+        }
+        button:hover {
+            background: #7b1fa2;
+        }
+        #listado {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .cuadro {
+            background: #f4d8ed;
+            border: 2px solid #d29edb;
+            width: 180px;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #5d0047;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📊 Tabla del 6 </h1>
+    <button onclick="mostrarTabla()">Mostrar</button>
+
+    <div id="listado"></div> <!-- Aquí van los cuadritos -->
+
+    <script>
+      function mostrarTabla() {
+        let i = 1;
+        let cont = document.getElementById("listado");
+        cont.innerHTML = ""; // Limpiar antes de mostrar
+
+        while (i <= 12) {
+          let cuadro = document.createElement("div");
+          cuadro.className = "cuadro";
+          cuadro.innerText = `6 × ${i} = ${6 * i}`;
+          cont.appendChild(cuadro);
+          i++;
+        }
+      }
+    </script>
+
+</body>
+</html>

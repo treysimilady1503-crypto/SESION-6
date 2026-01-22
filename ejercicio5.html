@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Tablas de Suma</title>
+
+<style>
+body{
+    background:#f0fcf7;
+    font-family:Arial;
+    color:#00604d;
+    text-align:center;
+}
+pre{
+    background:#d0f2e8;
+    padding:15px;
+    border-radius:5px;
+    text-align:left;
+    width:60%;
+    margin:auto;
+}
+button{
+    padding:10px 20px;
+    background:#009688;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Tablas de la Suma (Intervalo Personalizado)</h1>
+
+<button onclick="tablas()">Mostrar Tablas</button>
+
+<pre id="out"></pre>
+
+<script>
+function tablas(){
+    let inicio = parseInt(prompt("Ingrese el número inicial del intervalo:"));
+    let fin = parseInt(prompt("Ingrese el número final del intervalo:"));
+
+    if(isNaN(inicio) || isNaN(fin)){
+        alert("Por favor ingrese números válidos.");
+        return;
+    }
+
+    if(fin < inicio){
+        alert("El número final debe ser mayor o igual al inicial.");
+        return;
+    }
+
+    let resultado = "";
+
+    for(let i = inicio; i <= fin; i++){
+        resultado += "Tabla del " + i + "\n";
+        resultado += "------------------\n";
+
+        for(let j = inicio; j <= fin; j++){
+            resultado += i + " + " + j + " = " + (i + j) + "\n";
+        }
+        resultado += "\n";
+    }
+
+    document.getElementById("out").innerText = resultado;
+}
+</script>
+
+</body>
+</html>
